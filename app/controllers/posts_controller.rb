@@ -1,11 +1,20 @@
 class PostsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     @posts = Post.all
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build(post_params)
+      if @post.save
+        flash[:success] = "Post created"
+        redirect_to posts_path
+      else
+        flash[:alert] = "Post not created, check details"
+        render :new
+      end
   end
 
   def create
