@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -44,6 +45,14 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:image, :caption)
+  end
+
+  private
+    def owned_post
+    unless current_user == @post.user
+      flash[:alert] = "That post is not yours to delete"
+      redirect_to root_path
+    end
   end
 
 end
