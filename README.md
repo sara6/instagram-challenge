@@ -1,26 +1,35 @@
-Instagram Challenge
-===================
-
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use Google, your notes, books, etc., but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Instagram Challenge- week 7 Makers Academy
+==========================================
 
 Task
------
+----
+* Build instagram in Rails
 
-Build Instagram: Simple huh!
+Config
+-------
+* for repo
+* git clone https://github.com/sara6/instagram-challenge.git
+* cd instagram_challenge
+* bundle install
+* rails server- http://localhost3000/
 
-Bonus if you can write your own set of sensible user stories!
+Set-up
+------
+* Posts model
+* User model
+* Comments model
 
-As usual please start by
+User stories
+------------
+As a user, so I can show others how awesome my life is, I would like to post images with captions.
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_october2015 (if you haven't already)
-* Forking this repo. After cloning your fork and cd'ing into it, you'll need to [initialize a Rails app in the current directory](http://blog.jasonmeridth.com/posts/create-rails-application-in-current-directory/).
+As a user, so I can tell others how awesome their lives look, I would like to be able to comment on their posts.
 
-Your challenge is to build Instagram using Rails. You'll need **users** who can post **pictures**, write **comments** on pictures and **like** a picture. Style it like Instagram's website (or more awesome).
+As a user, so I can feel secure about my life, I would like my photos to be rated. (To be implemented)
 
-Bonus if you can add filters!
+Tools used
+----------
+* rails
+* rspec, capybara, factorygirl
+* a lot of ruby gems
+* html and css (layout needs tidying)
