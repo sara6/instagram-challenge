@@ -43,4 +43,28 @@ feature 'user' do
     end
   end
 
+  context 'user sign out' do
+    scenario 'can log out once logged in' do
+      visit '/'
+      click_link 'Login'
+      fill_in 'Email', with: 'lala@lala.com'
+      fill_in 'Password', with: 'password123'
+      click_button 'Log in'
+      click_link 'Logout'
+      expect(page).to have_content('Signed out successfully')
+    end
+  end
+
+  context 'user must be registered to see content' do
+    scenario 'cannot view index posts without logging in' do
+      visit '/'
+      expect(page).to have_content('You need to sign in or sign up before continuing')
+    end
+
+    scenario 'cannot create a new post without logging in' do
+      visit new_post_path
+      expect(page).to have_content('You need to sign in or sign up before continuing')
+    end
+  end
+
 end
